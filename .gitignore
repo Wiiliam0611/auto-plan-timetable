@@ -1,3 +1,9 @@
 # WebStorm project files
 .idea/
-.idea/dictionaries
+
+# production
+**/build/
+**/dist/
+
+# Dependency directories
+**/node_modules/
