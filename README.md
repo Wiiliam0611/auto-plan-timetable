@@ -7,6 +7,7 @@ Please checkout component-structure branch for the latest update.
 ### Contributor
 * Hefei Yang (12630087)
 * Qijun Yang (12790794)
+* Tian Liu (12716193)
 
 ### Version
 v0.01: In this version, our main aim is establish the main structure of Auto Plan Timetable web app. And separate it into components, construct skeletons with Angular framework.
