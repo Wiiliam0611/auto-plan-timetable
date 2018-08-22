@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Subject} from "../subject";
+import {SUBJECTS} from "../mockup-data";
+
 
 @Component({
   selector: 'app-subjects-list',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectsListComponent implements OnInit {
 
-  constructor() { }
+  subjects: Subject[];
+
+  constructor() {
+    this.subjects = SUBJECTS;
+  }
 
   ngOnInit() {
   }

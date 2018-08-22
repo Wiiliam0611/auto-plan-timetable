@@ -1,13 +1,10 @@
 <div id="subject-list" class="list-group-flush mt-3 mb-3 border-bottom border-top">
-  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+  *ngFor="let item of subjects">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">32144 Technology Research Preparation</h5>
-      <small>6cp</small>
+      <h5 class="mb-1">{{item.ID}} {{item.title}}</h5>
     </div>
-    <p class="ms-1">
-      Autumn session, City campus <br>
-      Spring session, City campus
-    </p>
-    <!--<small>Postgraduate</small>-->
+    <small>Credit Points: {{item.creditPoint}}</small>
+    <p class="mb-1">{{item.description}}</p>
   </a>
 </div>
