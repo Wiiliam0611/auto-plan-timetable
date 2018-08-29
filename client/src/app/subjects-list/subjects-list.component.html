@@ -1,0 +1,10 @@
+<div id="subject-list" class="list-group-flush mt-3 mb-3 border-bottom border-top">
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+  *ngFor="let item of subjects">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{item.ID}} {{item.title}}</h5>
+    </div>
+    <small>Credit Points: {{item.creditPoint}}</small>
+    <p class="mb-1">{{item.description}}</p>
+  </a>
+</div>
