@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+
 const sequelize = new Sequelize('database', null, null, {dialect: 'sqlite', storage: 'database.db'});
 
 const studentTable = sequelize.define('student', {
@@ -8,30 +9,22 @@ const studentTable = sequelize.define('student', {
     lastName: Sequelize.STRING,
     studentMajor: Sequelize.STRING
 });
-// const sequelize = require('sequelize');
-// const db = require('./db');
+
+studentTable.sync();
+
+
 
 class Student{
     constructor(obj) {
         this.studentId = obj['studentId'];
         this.password = obj['password'];
         this.firstName = obj['firstName'];
-        this.lastName = obj[' lastName'];
+        this.lastName = obj['lastName'];
         this.studentMajor = obj['studentMajor'];
     }
 
     save(cb){
-        sequelize
-            .sync({force: true})
-            .then(() => {
-                studentTable.create({
-                    studentId: this.studentId,
-                    password: this.password,
-                    firstName: this.firstName,
-                    lastName: this.lastName,
-                    studentMajor: this.studentMajor
-                })
-            });
+        studentTable.create(this);
         cb();
     }
 
@@ -54,7 +47,7 @@ class Student{
 
 module.exports = Student;
 
-const student = new Student({
+const student1 = new Student({
     studentId: 1,
     password: 'test',
     firstName: 'Hefei',
@@ -62,7 +55,7 @@ const student = new Student({
     studentMajor: 'no specific'
 });
 
-student.save(err=> {
+student1.save(err=> {
     if (err) console.error(err);
-    console.log('user name is ' + student.lastName);
+    console.log('user name is ' + student1.lastName);
 });

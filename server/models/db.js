@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('database', null, null, {dialect: 'sqlite', storage: 'database.db'});
 
-exports.student = sequelize.define('student', {
+const db = new Sequelize('database', null, null, {dialect: 'sqlite', storage: 'database.db'});
+
+exports.Student = db.define('student', {
     studentId: Sequelize.NUMERIC,
     password: Sequelize.STRING,
     firstName: Sequelize.STRING,
@@ -9,17 +10,4 @@ exports.student = sequelize.define('student', {
     studentMajor: Sequelize.STRING
 });
 
-exports.subject = sequelize.define('subject', {
-
-});
-
-exports.section = sequelize.define('section', {
-
-});
-
-exports.plan = sequelize.define('plan', {
-
-});
-
-
-
+module.exports = db;
